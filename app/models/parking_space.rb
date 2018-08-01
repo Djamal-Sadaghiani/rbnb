@@ -8,7 +8,7 @@ class ParkingSpace < ApplicationRecord
   validates :country, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
-  validates :type, presence: true, , inclusion: { in: ["covered, on road, off road"]}
+  validates :category, presence: true
   validates :price_per_hour, presence: true
   validates :user, presence: true
 end
