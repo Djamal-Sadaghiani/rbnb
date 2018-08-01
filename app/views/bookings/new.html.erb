@@ -1,0 +1,19 @@
+<h2>Book <%=  @parking_space.address%></h2>
+
+<%= simple_form_for [@parking_space, @booking] do |f| %>
+  <%= f.input :address %>
+  <%= f.input :postcode %>
+  <%= f.input :city %>
+  <%= f.input :country, as: :text %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.input :category, as: :text %>
+  <%= f.input :availability %>
+  <%= f.input :size %>
+  <%= f.input :price_per_hour %>
+
+  <%= f.submit "Add parking space", class: "btn btn-primary" %>
+<% end %>
+
+
+
