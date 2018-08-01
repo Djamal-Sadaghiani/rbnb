@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "parkingspaces/search", to: "parkingspaces#search", as: :search_parkingspace
 
   resources :users do
-    resources :bookings, only [:new, :create, :show, :edit, :update]
+    resources :bookings, only: [:new, :create, :show, :edit, :update]
     resources :cars
   end
 
