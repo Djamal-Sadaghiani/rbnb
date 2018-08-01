@@ -1,0 +1,23 @@
+<h1>Cars</h1>
+
+<table style="width: 100%">
+  <tr>
+    <th>License</th>
+    <th>Brand</th>
+    <th>Model</th>
+    <th>Colour</th>
+  </tr>
+  <% @cars.each do |car| %>
+  <tr>
+    <td> <%= car.license %> </td>
+    <td> <%= car.brand %> </td>
+    <td> <%= car.model %> </td>
+    <td> <%= car.colour %> </td>
+    <td> <%= link_to "Delete", car_path(car), method: :delete, data: {confirm: "Are you sure?" } %> </td>
+    <td> <%= link_to "Edit", edit_car_path(car) %> </td>
+  <% end %>
+  </tr>
+</table>
+
+<%= link_to "Add new car", new_car_path %>
+
