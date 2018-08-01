@@ -3,5 +3,7 @@
 <ul>
 <% @parking_spaces.each do |parking_space| %>
 <li>Address: <%= parking_space.address %></li>
+<%= link_to "Book", new_parking_space_booking_path(parking_space.id) %>
+<%= link_to "View", parking_space_path(parking_space.id) %>
 <% end %>
 </ul>
