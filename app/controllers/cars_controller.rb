@@ -31,7 +31,7 @@ class CarsController < ApplicationController
 
   def destroy
     @car.destroy
-    user = @car.user
+    # user = @car.user
     redirect_to user_cars_path(current_user)
   end
 
