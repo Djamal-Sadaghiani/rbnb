@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
 
-  before_action :set_booking, only: [:show, :update, :edit, :destroy]
+  before_action :set_car, only: [:show, :update, :edit, :destroy]
   before_action :set_user, only: [:create, :destroy]
 
   def index
