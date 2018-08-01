@@ -9,6 +9,4 @@ class User < ApplicationRecord
   has_many :bookings, through: :parking_spaces
 
   #Validations
-
-end
 end
