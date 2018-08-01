@@ -1,6 +1,6 @@
 <h2>Add new paking space</h2>
 
-<%= simple_form_for @restaurant do |f| %>
+<%= simple_form_for @parking_space do |f| %>
   <%= f.input :address %>
   <%= f.input :postcode %>
   <%= f.input :city %>
@@ -12,7 +12,7 @@
   <%= f.input :price_per_hour %>
   <%= f.input :type %>
 
-  <%= f.submit "add restaurant", class: "btn btn-primary" %>
+  <%= f.submit "Add parking space", class: "btn btn-primary" %>
 <% end %>
 
 
