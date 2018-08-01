@@ -1,0 +1,18 @@
+<h2>Add new paking space</h2>
+
+<%= simple_form_for @parking_space do |f| %>
+  <%= f.input :address %>
+  <%= f.input :postcode %>
+  <%= f.input :city %>
+  <%= f.input :country %>
+  <%= f.input :latitude %>
+  <%= f.input :longitude %>
+  <%= f.input :type %>
+  <%= f.input :availability %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :type %>
+
+  <%= f.submit "Add parking space", class: "btn btn-primary" %>
+<% end %>
+
+
