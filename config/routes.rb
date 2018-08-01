@@ -3,13 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :parkingspaces, only: [:index, :show]
-  get "parkingspaces/search", to: "parkingspaces#search", as: :search_parkingspace
 
-  resources :users do
+  get "parkingspaces/search", to: "parkingspaces#search", as: :search_parkingspace
+  resources :parking_spaces do
     resources :bookings, only: [:new, :create, :show, :edit, :update]
-    resources :cars
-    resources :parkingspaces, only: [:new, :create, :edit, :update, :destroy]
   end
+  resources :cars
 
 end

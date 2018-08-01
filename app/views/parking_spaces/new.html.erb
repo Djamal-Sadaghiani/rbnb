@@ -4,11 +4,12 @@
   <%= f.input :address %>
   <%= f.input :postcode %>
   <%= f.input :city %>
-  <%= f.input :country %>
+  <%= f.input :country, as: :text %>
   <%= f.input :latitude %>
   <%= f.input :longitude %>
-  <%= f.input :type %>
+  <%= f.input :category, as: :text %>
   <%= f.input :availability %>
+  <%= f.input :size %>
   <%= f.input :price_per_hour %>
 
   <%= f.submit "Add parking space", class: "btn btn-primary" %>
