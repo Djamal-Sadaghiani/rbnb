@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :bookings, only: [:new, :create, :show, :edit, :update]
-     resources :cars, only: [:show, :index]
     resources :parkingspaces, only: [:new, :create, :edit, :update, :destroy]
   end
-  resources :cars, only: [:destroy, :edit, :create, :update, :new]
+  resources :cars, only: [:destroy, :edit, :create, :update, :new, :index]
 end
