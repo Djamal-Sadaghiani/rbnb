@@ -1,6 +1,6 @@
 class ParkingSpace < ApplicationRecord
   belongs_to :user
-
+  has_many :bookings
   validates :size, presence: true
   validates :address, presence: true
   validates :city, presence: true
