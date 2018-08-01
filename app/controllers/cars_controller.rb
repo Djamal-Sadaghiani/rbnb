@@ -6,10 +6,6 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
 
-  def show
-    #render
-  end
-
   def new
     @car = Car.new
   end
