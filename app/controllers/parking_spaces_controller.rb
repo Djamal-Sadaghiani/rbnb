@@ -26,6 +26,21 @@ before_action :authenticate_user!, only: [:new, :create]
     end
   end
 
+  def edit
+    @user = current_user
+    @parking_space = ParkingSpace.find(params[:id])
+  end
+
+  def update
+    @parking_space = ParkingSpace.find(params[:id])
+    @parking_space.update(parking_space_params)
+    if @parking_space.update
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def parking_space_params
