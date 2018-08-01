@@ -1,2 +1,3 @@
 class ParkingSpaceController < ApplicationController
+
 end
