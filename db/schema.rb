@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_095144) do
     t.string "last_name"
     t.string "address"
     t.string "city"
-    t.integer "postcode"
+    t.string "postcode"
     t.string "country"
     t.string "avatar"
     t.date "date_of_birth"
