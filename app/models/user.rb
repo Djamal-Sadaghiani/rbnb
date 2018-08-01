@@ -6,7 +6,6 @@ class User < ApplicationRecord
   #Relationships
   has_many :parking_spaces
   has_many :cars
-  has_many :bookings, through: :cars
   has_many :bookings, through: :parking_spaces
 
   #Validations
