@@ -1,6 +1,6 @@
 class ParkingSpacesController < ApplicationController
 
-before_action :authenticate_user!, only: [:new, :create]
+before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @parking_spaces = ParkingSpace.all
@@ -39,6 +39,12 @@ before_action :authenticate_user!, only: [:new, :create]
     else
       render :new
     end
+  end
+
+  def destroy
+    @parking_space = ParkingSpace.find(params[:id])
+    @parking_space.destroy
+    redirect_to root_path
   end
 
   private
