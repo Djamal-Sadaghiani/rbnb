@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :bookings, through: :parking_spaces
 
   #Validations
+  validates :first_name, :last_name, :address, :city, :postcode, :country, :date_of_birth, :phone_number, presence: true
 end
