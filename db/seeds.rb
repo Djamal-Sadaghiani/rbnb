@@ -67,3 +67,15 @@ end
   })
   space.save
 end
+
+5. times do
+  booking = Booking.new({
+    start_time: DateTime.new(2018,2,3,4,5,6),
+    end_time: DateTime.new(2018,2,3,6,5,6),
+    car_id: rand(1..5),
+    parking_space_id: rand(1..5),
+    price: rand(10..30),
+    status: "unconfirmed"
+  })
+  booking.save
+end
