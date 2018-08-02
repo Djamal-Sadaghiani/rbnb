@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-
   before_action :set_booking, only: [:show, :update, :edit]
   before_action :set_parking_space, only: [:new, :create, :edit]
   before_action :set_licenses, only: [:new, :create, :edit, :update]
