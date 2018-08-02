@@ -14,7 +14,7 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyC4adAYmEXH65vwcGLN2Zi6fRutmLI8xVg"></script>
+    <%= javascript_include_tag "http://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>

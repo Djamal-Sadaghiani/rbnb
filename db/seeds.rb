@@ -36,6 +36,7 @@ user2 = User.new ({
   })
 user2.save
 
+puts "-- db:seed => created two users"
 #Cars
 
 5.times do
@@ -48,7 +49,7 @@ user2.save
   })
   car.save
 end
-
+puts "-- db:seed => created five cars"
 #Parking_spaces
 
 5.times do
@@ -65,6 +66,8 @@ end
   })
   space.save
 end
+puts "-- db:seed => created five parking spaces"
+#Bookings
 
 5. times do
   booking = Booking.new({
@@ -77,3 +80,5 @@ end
   })
   booking.save
 end
+puts "-- db:seed => created five parking bookings"
+puts "-- db:seed => SUCCESS"
