@@ -1,0 +1,10 @@
+<h2>Booking info</h2>
+
+<ul>
+  <li>Address: <%= @parking_space.address %></li>
+  <li>Start time: <%= @booking.start_time %> | End time: <%= @booking.end_time %> </li>
+  <li>Car-license: <%= @car.license %></li>
+  <li>Price: <%= @booking.price %>€</li>
+  <li>Status: <%= @booking.status %></li>
+  <%= link_to "Edit booking", edit_parking_space_booking_path(@parking_space, @booking) %>
+</ul>
