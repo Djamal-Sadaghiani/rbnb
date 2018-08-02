@@ -1,2 +1,11 @@
-<h2><%= @parking_space.address %></h2>
-<%= link_to "Book", new_parking_space_booking_path(@parking_space.id) %>
+<div class="container-text-center-parking-space-show">
+  <div class="grid-parking-space-show">
+
+    <div class="parking-space-map-show"></div>
+
+    <div class="parking-space-show">
+      <span><h2><%= @parking_space.address %></h2> | <p class="price"> Price Per Hour: <%= @parking_space.price_per_hour %></p>
+      <p><%= link_to "Book", new_parking_space_booking_path(@parking_space.id) %></p></span>
+    </div>
+  </div>
+</div>
