@@ -1,0 +1,10 @@
+<h2>My bookings</h2>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <% parking_space = ParkingSpace.find_by(id: booking.parking_space_id) %>
+    <li><%= parking_space.address %></li>
+    <p>Start time: <%= booking.start_time %> | End time: <%= booking.end_time %> | Price: <%= booking.price %>€ | Status: <%= booking.status %></p>
+    <%= link_to "More details", parking_space_booking_path(parking_space.id, booking.id) %>
+  <% end%>
+</ul>
