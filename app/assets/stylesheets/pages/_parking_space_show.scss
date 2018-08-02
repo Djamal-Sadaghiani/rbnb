@@ -8,7 +8,13 @@
 .grid-parking-space-show {
   display: grid;
   grid-template-columns: 2fr 4fr ;
-  grid-template-rows: 200px 200px 200px;
+  grid-template-rows: 180px 180px 220px;
+}
+
+.parking-space-picture-show {
+   grid-row: 3 / span 1;
+   background-color: yellow;
+   margin-top: 20px;
 }
 
 .parking-space-map-show {
@@ -21,8 +27,15 @@
   grid-row: 1 / span 2;
   h2 {
     font-size: 40px;
+    display: inline-block;
   };
   .price {
     color: $blue;
+    display: inline-block;
+    font-size: 25px;
   }
 }
+
+
+
+

@@ -56,4 +56,5 @@ class ParkingSpacesController < ApplicationController
   def set_parking_space
     @parking_space = ParkingSpace.find(params[:id])
   end
+
 end
