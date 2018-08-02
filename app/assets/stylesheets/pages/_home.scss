@@ -6,9 +6,6 @@
     color: #fed631;
     font-size: 30px;
   }
-  hr {
-    color: black;
-  }
 }
 
 .feature {
@@ -18,11 +15,43 @@
 }
 
 .flex-container {
-  padding: 30px;
   h3 {
     text-align: center;
   }
   h5 {
     text-align: center;
   }
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.review.flex-item {
+    padding: 15px;
+}
+
+.flex-container {
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+// SEARCH BAR
+.review {
+// background-color: white;
+}
+
+.search-box {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 50px;
+    height: 70px;
+    width: 80%;
+    text-align: center;
 }
