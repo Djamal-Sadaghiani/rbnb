@@ -1,0 +1,9 @@
+<%= @location %>
+<% @parking_spaces.each do |parking_space| %>
+<br>
+<%= parking_space.address %>
+<% end %>
+
+<div class="parking-space-map-show">
+  <div id="map_search" style="height: 600px; width: 600px" data-markers="<%= @markers.to_json %>"></div>
+</div>
