@@ -1,0 +1,10 @@
+
+<%= simple_form_for [@parking_space, @booking] do |f| %>
+  <%= f.input :start_time, as: :string %>
+  <%= f.input :end_time, as: :string %>
+  <%= f.input :status %>
+  <%= f.input :car_id, collection: @licenses %>
+  <%#= select_tag "license", options_for_select(@licenses) %>
+
+  <%= f.submit "Add booking", class: "btn btn-primary" %>
+<% end %>
