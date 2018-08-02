@@ -53,7 +53,7 @@ class ParkingSpacesController < ApplicationController
   def search
     result = Geocoder.search(params[:search][:query])
     @location = result.first.coordinates
-    @parking_spaces = ParkingSpace.near(@location,10000)
+    @parking_spaces = ParkingSpace.near(@location,2500)
     @markers = @parking_spaces.map do |space|
       {
         lat: space.latitude,

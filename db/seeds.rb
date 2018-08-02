@@ -52,7 +52,7 @@ end
 puts "-- db:seed => created five cars"
 #Parking_spaces
 
-5.times do
+50.times do
   space = ParkingSpace.new({
     size: rand(4..12),
     user: user2,
@@ -66,7 +66,7 @@ puts "-- db:seed => created five cars"
   })
   space.save
 end
-puts "-- db:seed => created five parking spaces"
+puts "-- db:seed => created fifty parking spaces"
 #Bookings
 
 5. times do
