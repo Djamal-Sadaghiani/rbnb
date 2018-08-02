@@ -75,7 +75,7 @@ end
     car_id: rand(1..5),
     parking_space_id: rand(1..5),
     price: rand(10..30),
-    status: "unconfirmed"
+    status: false
   })
   booking.save
 end
