@@ -1,27 +1,17 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :edit]
   before_action :set_parking_space, only: [:new, :create, :edit]
-  before_action :set_licenses, only: [:new, :create, :edit, :update]
 
   def index
-    user = current_user
-    cars = user.cars
-    cars_id = []
-    cars.each do |car|
-      cars_id << car.id
-    end
-    @bookings = Booking.where(car_id: cars_id)
-  end
-
-  def new
-    @booking = Booking.new
+    @bookings = policy_scope(Booking)
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.price = 2
-    @booking.car = Car.find_by(license: params[:license])
+    @booking.car = Car.find_by(license: params[:booking][:car_id])
     @booking.parking_space = @parking_space
+    authorize @booking
     if @booking.save
       redirect_to parking_space_booking_path(@booking.parking_space, @booking)
     else
@@ -30,16 +20,19 @@ class BookingsController < ApplicationController
   end
 
   def show
+    authorize @booking
     @parking_space = ParkingSpace.find_by(id: @booking.parking_space_id)
     @car = Car.find_by(id: @booking.car_id)
   end
 
   def edit
+    authorize @booking
   end
 
   def update
     @booking.parking_space = ParkingSpace.find(params[:parking_space_id])
     @booking.car = Car.find_by(license: params[:license])
+    authorize @booking
     if @booking.update(booking_params)
       redirect_to parking_space_booking_path(@booking.parking_space, @booking)
     else
@@ -55,15 +48,6 @@ class BookingsController < ApplicationController
 
   def set_parking_space
     @parking_space = ParkingSpace.find(params[:parking_space_id])
-  end
-
-  def set_licenses
-    @user = current_user
-    @cars = @user.cars
-    @licenses = []
-    @cars.each do |car|
-      @licenses << car.license
-    end
   end
 
   def booking_params

@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_095144) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.integer "price"
-    t.string "status"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_bookings_on_car_id"

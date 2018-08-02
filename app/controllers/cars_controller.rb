@@ -1,6 +1,5 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @cars = policy_scope(Car).order(created_at: :desc)

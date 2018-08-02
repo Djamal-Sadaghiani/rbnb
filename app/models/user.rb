@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   #Validations
   validates :first_name, :last_name, :address, :city, :postcode, :country, :date_of_birth, :phone_number, presence: true
+
+  def get_licenses
+    self.cars.map { |car| car.license }
+  end
 end

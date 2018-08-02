@@ -1,13 +1,13 @@
 class ParkingSpacesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_parking_space, only: [:show, :update, :edit, :destroy]
-
 
   def index
     @parking_spaces = policy_scope(ParkingSpace).order(created_at: :desc)
   end
 
   def show
+    @booking = Booking.new
+    @licenses = current_user.get_licenses
     authorize @parking_space
   end
 
@@ -56,4 +56,5 @@ class ParkingSpacesController < ApplicationController
   def set_parking_space
     @parking_space = ParkingSpace.find(params[:id])
   end
+
 end
