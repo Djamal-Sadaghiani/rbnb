@@ -59,8 +59,6 @@ end
     city: Faker::Address.city,
     postcode: Faker::Address.postcode,
     country: Faker::Address.country,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude,
     category: "Garage",
     price_per_hour: rand(100..500),
     availability: "somethingishere"
