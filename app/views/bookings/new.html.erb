@@ -4,6 +4,8 @@
   <%= f.input :start_time %>
   <%= f.input :end_time %>
   <%= f.input :status %>
+  <%= select_tag "license", options_for_select(@licenses) %>
+
 
   <%= f.submit "Add parking space", class: "btn btn-primary" %>
 <% end %>
