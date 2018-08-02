@@ -8,10 +8,13 @@
     <div class="parking-space-show">
       <h2><%= @parking_space.address %>-</h2> <p class="price">Price Per Hour: <%= @parking_space.price_per_hour %></p>
       <p class="parking-space-details"><strong>Catagory:</strong> <%= @parking_space.category%> | <strong>Size:</strong> <%= @parking_space.size %></p>
-      <p class="book-parking-space"><%= link_to "Book", new_parking_space_booking_path(@parking_space.id) %></p></span>
+      <strong><p>Description:</p></strong>
     </div>
 
-    <%= render 'bookings/new' %>
+    <div class="booking-parking-space-show">
+      <strong><p>Book this parking space:</p></strong>
+      <%= render 'bookings/new' %>
+    </div>
 
   </div>
 </div>

@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :edit]
   before_action :set_parking_space, only: [:new, :create, :edit]
-  before_action :set_licenses, only: [:new, :create, :edit, :update]
 
   def index
     user = current_user
@@ -20,7 +19,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.price = 2
-    @booking.car = Car.find_by(license: params[:license])
+    @booking.car = Car.find_by(license: params[:booking][:car_id])
     @booking.parking_space = @parking_space
     if @booking.save
       redirect_to parking_space_booking_path(@booking.parking_space, @booking)
@@ -55,15 +54,6 @@ class BookingsController < ApplicationController
 
   def set_parking_space
     @parking_space = ParkingSpace.find(params[:parking_space_id])
-  end
-
-  def set_licenses
-    @user = current_user
-    @cars = @user.cars
-    @licenses = []
-    @cars.each do |car|
-      @licenses << car.license
-    end
   end
 
   def booking_params
