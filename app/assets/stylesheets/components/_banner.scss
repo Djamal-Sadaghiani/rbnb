@@ -5,6 +5,16 @@
   align-items: center;
   height: 70vh;
   overflow: hidden;
+  &:before {
+    content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right bottom, #648880, #293f50);
+  opacity: .5;
+  }
 }
 
 .fullscreen-bg__video {
@@ -15,3 +25,17 @@
     height: auto;
     z-index: -1;
 }
+
+.banner-contents {
+  z-index: 2;
+  width: 80%;
+  color: white;
+  h1 {
+    font-size: 80px;
+  }
+  p {
+    font-size: 25px;
+    color: black;
+  }
+}
+
