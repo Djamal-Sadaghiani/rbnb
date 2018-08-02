@@ -6,6 +6,7 @@ class ParkingSpacesController < ApplicationController
   end
 
   def show
+    @marker = { lat: @parking_space.latitude, lng: @parking_space.longitude}
     @booking = Booking.new
     @licenses = current_user.get_licenses
     authorize @parking_space
