@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+.stars-container {
+    display: flex;
+    justify-content: center;
+  i {
+    color: #fed631;
+    font-size: 30px;
+  }
+  hr {
+    color: black;
+  }
+}
+
+.feature {
+  i {
+    font-size: 50px;
+  }
+}
+
+.flex-container {
+  padding: 30px;
+  h3 {
+    text-align: center;
+  }
+  h5 {
+    text-align: center;
+  }
+}
