@@ -7,7 +7,9 @@
     <div class="banner-contents text-center">
       <h1><strong>DRIVE, PARK & ARRIVE</strong></h1>
       <p><strong>Your space is waiting - join the parking revolution</strong></p>
-      <input class="search-box" type="text" placeholder="Search Address, Place or Venue">
+      <%= simple_form_for :search, url: search_parkingspace_path, method: "get" do |f| %>
+        <%= f.input :query, class: "search-box", placeholder: "Search Address, Place or Venue" %>
+      <% end %>
     </div>
   </div>
 

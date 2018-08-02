@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  get "parkingspaces/search", to: "parkingspaces#search", as: :search_parkingspace
+  get "parkingspaces/search", to: "parking_spaces#search", as: :search_parkingspace
   resources :parking_spaces do
     resources :bookings, only: [:new, :create, :show, :edit, :update]
   end
