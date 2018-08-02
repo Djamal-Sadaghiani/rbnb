@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
-    byebug
   end
 
   def create
