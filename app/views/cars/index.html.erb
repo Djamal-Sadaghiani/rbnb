@@ -12,9 +12,15 @@
     <td> <%= car.brand %> </td>
     <td> <%= car.model %> </td>
     <td> <%= car.colour %> </td>
+    <% if policy(car).destroy? %>
     <td> <%= link_to "Delete", car_path(car), method: :delete, data: {confirm: "Are you sure?" } %> </td>
+    <% end %>
+    <% if policy(car).edit? %>
     <td> <%= link_to "Edit", edit_car_path(car) %> </td>
+    <% end %>
   <% end %>
   </tr>
 </table>
- <%= link_to "Add new car", new_car_path %>
+<% if policy(@cars).create? %>
+  <%= link_to "Add new car", new_car_path %>
+<% end %>

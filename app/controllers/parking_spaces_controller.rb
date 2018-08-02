@@ -1,13 +1,14 @@
 class ParkingSpacesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_parking_space, only: [:show, :update, :edit, :destroy]
 
-before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @parking_spaces = ParkingSpace.all
+    @parking_spaces = policy_scope(ParkingSpace).order(created_at: :desc)
   end
 
   def show
-    @parking_space = ParkingSpace.find(params[:id])
+    authorize @parking_space
   end
 
   def new
@@ -28,11 +29,10 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
 
   def edit
     @user = current_user
-    @parking_space = ParkingSpace.find(params[:id])
   end
 
   def update
-    @parking_space = ParkingSpace.find(params[:id])
+    authorize @parking_spaces
     @parking_space.update(parking_space_params)
     if @parking_space.update
       redirect_to root_path
@@ -42,7 +42,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
   end
 
   def destroy
-    @parking_space = ParkingSpace.find(params[:id])
+    authorize @parking_spaces
     @parking_space.destroy
     redirect_to root_path
   end
@@ -53,4 +53,7 @@ before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destro
     params.require(:parking_space).permit(:address, :postcode, :city, :country, :latitude, :longitude, :category, :availability, :size, :price_per_hour)
   end
 
+  def set_parking_space
+    @parking_space = ParkingSpace.find(params[:id])
+  end
 end
