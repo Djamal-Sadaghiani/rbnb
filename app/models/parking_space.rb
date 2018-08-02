@@ -13,7 +13,7 @@ class ParkingSpace < ApplicationRecord
   after_validation :geocode
 
   def geocodedata
-    [address, city, country].compact.join(', ')
+    "#{address}, #{postcode} #{city}, #{country}"
   end
 
 end
