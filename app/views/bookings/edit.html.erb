@@ -1,4 +1,4 @@
-<h2>Book <%=  @parking_space.address%></h2>
+<h2>Edit booking for <%= @parking_space.address %></h2>
 
 <%= simple_form_for [@parking_space, @booking] do |f| %>
   <%= f.input :start_time %>
@@ -7,5 +7,5 @@
   <%= select_tag "license", options_for_select(@licenses) %>
 
 
-  <%= f.submit "Add booking", class: "btn btn-primary" %>
+  <%= f.submit "Edit booking", class: "btn btn-primary" %>
 <% end %>
