@@ -5,7 +5,8 @@ import { showMap } from "../components/maps"
 import { searchMap } from "../components/maps"
 import { autocomplete } from '../components/autocomplete';
 import { getLocation } from '../components/location';
-import { showLocation } from '../components/location';
+import { success } from '../components/location';
+import { error } from '../components/location';
 
 const parkingSpaceShow = document.querySelector('.parking_spaces.show');
 if (parkingSpaceShow) {
