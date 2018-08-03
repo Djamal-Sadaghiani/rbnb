@@ -51,8 +51,12 @@ class ParkingSpacesController < ApplicationController
   end
 
   def search
-    result = Geocoder.search(params[:search][:query])
-    @location = result.first.coordinates
+    if params[:cord].nil?
+      result = Geocoder.search(params[:search][:query])
+      @location = result.first.coordinates
+    else
+      @location = params[:cord].split(" ")
+    end
     @parking_spaces = ParkingSpace.near(@location,2500)
     @markers = @parking_spaces.map do |space|
       {
@@ -61,6 +65,7 @@ class ParkingSpacesController < ApplicationController
       }
     end
   end
+
 
   private
 
