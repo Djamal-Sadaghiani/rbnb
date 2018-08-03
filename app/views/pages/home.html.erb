@@ -2,14 +2,17 @@
 <div class="main-container">
   <div class="fullscreen-bg">
    <video autoplay muted loop id="myVideo" class="fullscreen-bg__video">
-    <source src="<%= asset_url('video.mp4') %>" type="video/mp4">
+    <source src="<%= asset_url('London.mp4') %>" type="video/mp4">
     </video>
     <div class="banner-contents text-center">
       <h1><strong>DRIVE, PARK & ARRIVE</strong></h1>
       <p><strong>Your space is waiting - join the parking revolution</strong></p>
-      <%= simple_form_for :search, url: search_parkingspace_path, method: "get" do |f| %>
-      <%= f.input :query, placeholder: "Search Address, Place or Venue", id: "home_search", class: 'search-box' %>
-      <% end %>
+      <form novalidate="novalidate" class="simple_form search" action="/parkingspaces/search" accept-charset="UTF-8" method="get">
+        <input name="utf8" type="hidden" value="✓">
+        <div class="form-group string required search_query">
+          <input class="search-box string required" placeholder="Search Address, Place or Venue" type="text" name="search[query]" id="search_query" autocomplete="off">
+        </div>
+      </form>
     </div>
   </div>
   <div id="demo">
@@ -96,6 +99,4 @@
       </div>
     </div>
   </div>
-
-
 
