@@ -5,9 +5,6 @@ function autocomplete() {
     if (spaceAddress) {
       const autocomplete = new google.maps.places.Autocomplete(spaceAddress, { types: [ 'geocode' ] });
       google.maps.event.addDomListener(spaceAddress, 'keydown', function(e) {
-        if (e.key === "Enter") {
-          e.preventDefault(); // Do not submit the form on Enter.
-        }
       });
     }
   });
