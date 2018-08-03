@@ -8,76 +8,94 @@
       <h1><strong>DRIVE, PARK & ARRIVE</strong></h1>
       <p><strong>Your space is waiting - join the parking revolution</strong></p>
       <%= simple_form_for :search, url: search_parkingspace_path, method: "get" do |f| %>
-        <%= f.input :query, class: "search-box", placeholder: "Search Address, Place or Venue", id: "home_search" %>
+      <%= f.input :query, placeholder: "Search Address, Place or Venue", id: "home_search", class: 'search-box' %>
       <% end %>
     </div>
   </div>
   <div id="demo">
   </div>
-  <!-- FEATURES -->
-  <div class="flex-container">
-    <div class="feature flex-item text-center">
-      <i class="fas fa-mobile-alt"></i>
-      <br>
-      <br>
-      <br>
-      <h4><strong>Hassle-Free Booking</strong></h4>
-      <p>Reserve a space with a few taps and skip the parking hunt.</p>
-    </div>
-    <div class="feature flex-item text-center">
-      <i class="fas fa-money-bill-wave"></i>
-      <br>
-      <br>
-      <br>
-      <h4><strong>No-Surprise Pricing</strong></h4>
-      <p>Compare prices, see your total cost up-front, and save up to 50%.</p>
-    </div>
-    <div class="feature flex-item text-center">
-      <i class="fas fa-car"></i>
-      <br>
-      <br>
-      <br>
-      <h4><strong>Lightning-Fast Parking</strong></h4>
-      <p>Park your car in seconds and go do your thing.</p>
+  <!-- FEATURE -->
+  <div class="feature-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="feature flex-item text-center">
+          <i class="fas fa-mobile-alt"></i>
+          <br>
+          <br>
+          <br>
+          <h4><strong>Hassle-Free Booking</strong></h4>
+          <p>Reserve a space with a few clicks.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="feature flex-item text-center">
+          <i class="fas fa-money-bill-wave"></i>
+          <br>
+          <br>
+          <br>
+          <h4><strong>No-Surprise Pricing</strong></h4>
+          <p>Compare prices and save up to 50%.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="feature flex-item text-center">
+          <i class="fas fa-car"></i>
+          <br>
+          <br>
+          <br>
+          <h4><strong>Lightning-Fast Parking</strong></h4>
+          <p>Park your car in seconds.</p>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- REVIEWS  -->
-  <div class="flex-container">
-    <div class="review flex-item">
-      <div class="stars-container">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+  <!-- REVIEWS -->
+  <div class="review-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="review flex-item">
+          <div class="stars-container">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <hr>
+          <p align="justify">I love ParkWise. It's the best app out there to help you find parking. So easy to use even my parents use it. Anytime I head into the city I use ParkWise. It saves me time and money. Great for concerts and when I commute to work.</p>
+          <p> <strong> - COMMUTER</strong></p>
+        </div>
       </div>
-      <hr>
-      <p align="justify">I love ParkWise. It's the best app out there to help you find parking. So easy to use even my parents use it. Anytime I head into the city I use ParkWise. It saves me time and money. Great for concerts and when I commute to work.</p>
-      <p> <strong> - COMMUTER</strong></p>
-    </div>
-    <div class="review flex-item">
-      <div class="stars-container">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="review flex-item">
+          <div class="stars-container">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <hr>
+          <p align="justify">Using ParkWhiz was awesome! I didn't have to walk forever or drive around trying to find a spot.I have never been in and out of a parking garage after a concert so fast… Search, reserve, pay, park, it's that easy!</p>
+          <p><strong>- CONCERTGOER</strong></p>
+        </div>
       </div>
-      <hr>
-      <p align="justify">Using ParkWhiz was awesome! I didn't have to walk forever or drive around trying to find a spot.I have never been in and out of a parking garage after a concert so fast… Search, reserve, pay, park, it's that easy!</p>
-      <p><strong>- CONCERTGOER</strong></p>
-    </div>
-    <div class="review flex-item">
-      <div class="stars-container">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="review flex-item">
+          <div class="stars-container">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <hr>
+          <p align="justify">Wow!! What a great experience. It takes a minute to set up. It is easy to use. The best thing, it saved us so much money on our holiday. I'm going to start using it for work to now. Thanks, ParkWise! You are my hero!</p>
+          <p><strong> - TRAVELLING FAMILY MAN </strong></p>
+        </div>
       </div>
-      <hr>
-      <p align="justify">Wow!! What a great experience. It takes a minute to set up. It is easy to use. The best thing, it saved us so much money on our holiday. I'm going to start using it for work to now. Thanks, ParkWise! You are my hero!</p>
-      <p><strong> - TRAVELLING FAMILY MAN </strong></p>
     </div>
   </div>
+
+
 
