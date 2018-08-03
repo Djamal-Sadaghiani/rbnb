@@ -42,8 +42,19 @@ hr {
 }
 
 // SEARCH BAR
-.review {
-// background-color: white;
+.review-container {
+  background-color: white;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.feature-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .search-box {
@@ -51,7 +62,7 @@ hr {
     font-size: 1.25rem;
     line-height: 1.5;
     border-radius: 50px;
-    height: 70px;
-    width: 80%;
+    height: 50px;
+    width: 70%;
     text-align: center;
 }
