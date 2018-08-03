@@ -8,11 +8,12 @@
       <h1><strong>DRIVE, PARK & ARRIVE</strong></h1>
       <p><strong>Your space is waiting - join the parking revolution</strong></p>
       <%= simple_form_for :search, url: search_parkingspace_path, method: "get" do |f| %>
-        <%= f.input :query, class: "search-box", placeholder: "Search Address, Place or Venue" %>
+        <%= f.input :query, class: "search-box", placeholder: "Search Address, Place or Venue", id: "home_search" %>
       <% end %>
     </div>
   </div>
-
+  <div id="demo">
+  </div>
   <!-- FEATURES -->
   <div class="flex-container">
     <div class="feature flex-item text-center">
