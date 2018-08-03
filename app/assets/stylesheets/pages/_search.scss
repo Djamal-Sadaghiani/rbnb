@@ -1,0 +1,58 @@
+.col {
+  padding: 0px;
+}
+
+.card {
+  flex-direction: row;
+}
+
+.card-holder {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-body {
+  display: flex;
+
+}
+
+.search-card {
+  flex: 1 100%;
+  margin: 25px 75px;
+}
+
+.card-body {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
+
+.side-arrow {
+  width: 20%;
+  background-color: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.icons-right, .icons-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-arrow-link {
+  color: white;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+}

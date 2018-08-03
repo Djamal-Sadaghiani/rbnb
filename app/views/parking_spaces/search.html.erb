@@ -1,9 +1,34 @@
-<%= @location %>
-<% @parking_spaces.each do |parking_space| %>
-<br>
-<%= parking_space.address %>
-<% end %>
-
-<div class="parking-space-map-show">
-  <div id="map_search" style="height: 80vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div id="map_search" style="height: 92.66vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
+    </div>
+    <div class="col card-holder">
+      <% @parking_spaces.each_with_index do |space, index| %>
+      <% break if index >= 4 %>
+      <div class="card w-75 search-card" data-aos="fade-down" data-aos-delay="<%= 300 + 400 * index %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= space.address %></h5>
+          <div class="card-icons">
+            <div class="icons-left">
+            <i class="fas fa-parking">    <%= space.category %></i>
+            <br>
+            <i class="fas fa-square">    <%= space.size %>m³</i>
+            </div>
+            <div class="icons-right">
+            <i class="fas fa-money-bill-alt">    <%= space.price_per_hour / 100.00 %>$ per hour</i>
+            <br>
+            <i class="fas fa-globe"> -> 300m away</i>
+          </div>
+          </div>
+        </div>
+        <div class="side-arrow">
+          <div>
+            <%= link_to "View >", parking_space_path(space), class: "side-arrow-link" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

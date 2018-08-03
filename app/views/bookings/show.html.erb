@@ -1,10 +1,9 @@
-<h2>Booking info</h2>
+<h2 class="my-booking-title">Booking at <%= @parking_space.address %></h2>
 
-<ul>
-  <li>Address: <%= @parking_space.address %></li>
-  <li>Start time: <%= @booking.start_time %> | End time: <%= @booking.end_time %> </li>
-  <li>Car-license: <%= @car.license %></li>
-  <li>Price: <%= @booking.price %>€</li>
-  <li>Status: <%= @booking.status %></li>
+<ul class="my-booking-list">
+  <li><strong> Start time:</strong> <%= @booking.start_time %> | <strong>End time:</strong> <%= @booking.end_time %> </li>
+  <li><strong>Car-license:</strong> <%= @car.license %></li>
+  <li><strong>Price:</strong> <%= @booking.price %>€</li>
+  <li><strong>Status:</strong> <%= @booking.status %></li>
   <%= link_to "Edit booking", edit_parking_space_booking_path(@parking_space, @booking) %>
 </ul>

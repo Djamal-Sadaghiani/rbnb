@@ -16,6 +16,7 @@ class ParkingSpacesController < ApplicationController
 
   def new
     @parking_space = ParkingSpace.new
+    authorize @parking_space
     @user = current_user
   end
 
@@ -23,6 +24,7 @@ class ParkingSpacesController < ApplicationController
     @parking_space = ParkingSpace.new(parking_space_params)
     @user = current_user
     @parking_space.user = @user
+    authorize @parking_space
     if @parking_space.save
       redirect_to root_path
     else
@@ -57,7 +59,7 @@ class ParkingSpacesController < ApplicationController
     else
       @location = params[:cord].split(" ")
     end
-    @parking_spaces = ParkingSpace.near(@location,2500)
+    @parking_spaces = ParkingSpace.near(@location,5)
     @markers = @parking_spaces.map do |space|
       {
         lat: space.latitude,
