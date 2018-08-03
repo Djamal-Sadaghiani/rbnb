@@ -1,6 +1,6 @@
 function getLocation() {
     if (navigator.geolocation) {
-        var position = navigator.geolocation.getCurrentPosition(success, error);
+        const position = navigator.geolocation.getCurrentPosition(success, error);
         console.log(position);
     } else {
         console.log("Geolocation is not supported by this browser.");
@@ -8,8 +8,8 @@ function getLocation() {
 }
 
 function success(pos) {
-  var crd = pos.coords;
-  fetch(`/parkingspaces/search${crd}`)
+  const crd = pos.coords;
+  window.location.href = `/parkingspaces/search?cord=${crd.latitude} ${crd.longitude}`;
   console.log('Your current position is:');
   console.log(`Latitude : ${crd.latitude}`);
   console.log(`Longitude: ${crd.longitude}`);
