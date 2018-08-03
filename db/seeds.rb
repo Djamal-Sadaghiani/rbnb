@@ -57,9 +57,9 @@ puts "-- db:seed => created five cars"
     size: rand(4..12),
     user: user2,
     address: Faker::Address.street_address,
-    city: Faker::Address.city,
-    postcode: Faker::Address.postcode,
-    country: Faker::Address.country,
+    city: "Canggu",
+    postcode: 80351,
+    country: "Indonesia",
     category: "Garage",
     price_per_hour: rand(100..500),
     availability: "somethingishere"
