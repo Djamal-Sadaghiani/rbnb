@@ -59,7 +59,7 @@ class ParkingSpacesController < ApplicationController
     else
       @location = params[:cord].split(" ")
     end
-    @parking_spaces = ParkingSpace.near(@location,2)
+    @parking_spaces = ParkingSpace.near(@location,1)
     if @parking_spaces.length == 0
       @markers =
         {
