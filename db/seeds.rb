@@ -26,7 +26,6 @@ user2 = User.new ({
   postcode: "420",
   country: "Germany",
   email: "peterparker@rails.com",
-  avatar: "https://qph.fs.quoracdn.net/main-qimg-a8cafcc4acb60054c65bd209e7f5cc79-c",
   date_of_birth: Date.today,
   phone_number: "4204204240240240",
   password: "testtest",
