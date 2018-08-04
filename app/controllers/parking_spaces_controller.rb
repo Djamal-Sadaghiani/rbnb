@@ -59,12 +59,21 @@ class ParkingSpacesController < ApplicationController
     else
       @location = params[:cord].split(" ")
     end
-    @parking_spaces = ParkingSpace.near(@location,5)
-    @markers = @parking_spaces.map do |space|
-      {
-        lat: space.latitude,
-        lng: space.longitude#,
-      }
+    @parking_spaces = ParkingSpace.near(@location,2)
+    if @parking_spaces.length == 0
+      @markers =
+        {
+          lat: @location[0],
+          lng: @location[1],
+        }
+      render :add_space
+    else
+      @markers = @parking_spaces.map do |space|
+        {
+          lat: space.latitude,
+          lng: space.longitude#,
+        }
+      end
     end
   end
 

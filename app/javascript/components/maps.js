@@ -12,6 +12,20 @@ const showMap = function (){
   }
 }
 
+
+const shownoresultMap = function (){
+    const mapElement = document.getElementById('map_noresult');
+    if (mapElement) {
+    const map = new GMaps({ el: '#map_noresult', lat: 0, lng: 0 });
+    const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
+    map.addMarkers([markers]);
+    map.setCenter(markers.lat, markers.lng);
+    map.setZoom(14);
+  }
+}
+
+
 const searchMap = function () {
   const mapElement = document.getElementById('map_search');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
@@ -31,3 +45,4 @@ const searchMap = function () {
 
 export { showMap };
 export { searchMap };
+export { shownoresultMap };

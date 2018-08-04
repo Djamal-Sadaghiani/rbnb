@@ -8,7 +8,6 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :country, :string
     add_column :users, :avatar, :string
     add_column :users, :date_of_birth, :date
-    add_column :users, :nationality, :string
     add_column :users, :phone_number, :string
   end
 end

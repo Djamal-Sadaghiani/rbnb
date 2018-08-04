@@ -12,7 +12,6 @@ user = User.new ({
   email: "ruby@ruby.com",
   avatar: "https://qph.fs.quoracdn.net/main-qimg-a8cafcc4acb60054c65bd209e7f5cc79-c",
   date_of_birth: Date.today,
-  nationality: "German",
   phone_number: "4204204240240240",
   password: "testtest",
   password_confirmation: "testtest"
@@ -29,7 +28,6 @@ user2 = User.new ({
   email: "peterparker@rails.com",
   avatar: "https://qph.fs.quoracdn.net/main-qimg-a8cafcc4acb60054c65bd209e7f5cc79-c",
   date_of_birth: Date.today,
-  nationality: "German",
   phone_number: "4204204240240240",
   password: "testtest",
   password_confirmation: "testtest"
@@ -57,9 +55,9 @@ puts "-- db:seed => created five cars"
     size: rand(4..12),
     user: user2,
     address: Faker::Address.street_address,
-    city: "Canggu",
-    postcode: 80351,
-    country: "Indonesia",
+    city: "London",
+    postcode: "WC2N 5DU",
+    country: "United Kingdom",
     category: "Garage",
     price_per_hour: rand(100..500),
     availability: "somethingishere"
