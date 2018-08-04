@@ -1,7 +1,7 @@
 class ParkingSpacesController < ApplicationController
   before_action :set_parking_space, only: [:show, :update, :edit, :destroy]
-  skip_before_action :authenticate_user!, only: :search
-  skip_after_action :verify_authorized, only: :search
+  skip_before_action :authenticate_user!, only: [:search, :show]
+  skip_after_action :verify_authorized, only: [:search, :show]
 
   def index
     @parking_spaces = policy_scope(ParkingSpace).order(created_at: :desc)
