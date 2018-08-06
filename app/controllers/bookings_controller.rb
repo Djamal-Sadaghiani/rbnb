@@ -8,14 +8,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.price = 2
     @booking.car = Car.find_by(license: params[:booking][:car_id])
     @booking.parking_space = @parking_space
     authorize @booking
     if @booking.save
       redirect_to parking_space_booking_path(@booking.parking_space, @booking)
     else
-      render :new
+      flash[:alert] = 'Invalid input'
+      redirect_to parking_space_path(@parking_space)
     end
   end
 
