@@ -1,10 +1,26 @@
-<h2 class="my-bookings-title">My bookings</h2>
 
-<ul class="my-bookings-list">
-  <% @bookings.each do |booking| %>
-    <% parking_space = ParkingSpace.find_by(id: booking.parking_space_id) %>
-    <li class="my-booking-address"><strong><%= parking_space.address %></strong></li>
-    <p><strong>Start time:</strong> <%= booking.start_time %> | <strong>End time:</strong> <%= booking.end_time %> | <strong>Price: </strong><%= booking.price %>€ | <strong>Status:</strong> <%= booking.status %></p>
-    <div class="my-booking-more-details"><%= link_to "View booking", parking_space_booking_path(parking_space.id, booking.id) %></div>
+<h1 class="my-bookings-title">Bookings</h1>
+
+<!-- TEST -->
+<div class="bookings-container flex-container">
+<div class="row" id="bookings-maps-container">
+  <% @bookings_data.each_with_index do |booking_data, i| %>
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <!-- MAP -->
+        <div
+          id="booking-map-<%= i %>"
+          style="width: 100%;
+          height: 80%;"
+          class="booking-map"
+          data-markers="<%= booking_data[:markers].to_json %>"
+        ></div>
+        <!-- INFO -->
+        <ul class="my-bookings-list">
+          <li class="my-booking-address"><strong><%= booking_data[:parking_space].address %></strong></li>
+          <p><strong>Start time:</strong> <%= booking_data[:booking].start_time %> | <strong>End time:</strong> <%= booking_data[:booking].end_time %> | <strong>Price: </strong><%= booking_data[:booking].price %>€ | <strong>Status:</strong> <%= booking_data[:booking].status %></p>
+          <div class="my-booking-more-details"><%= link_to "View booking", parking_space_booking_path(booking_data[:parking_space].id, booking_data[:booking].id) %></div>
+        </ul>
+    </div>
   <% end%>
-</ul>
+</div>
+</div>

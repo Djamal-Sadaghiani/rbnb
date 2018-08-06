@@ -9,9 +9,14 @@ import { autocomplete_city } from '../components/autocomplete';
 import { getLocation } from '../components/location';
 import { success } from '../components/location';
 import { error } from '../components/location';
+import { bookingMap } from "../components/maps";
 import { shownoresultMap } from "../components/maps"
 import { showStreet} from "../components/maps";
 
+const bookingMapElement = document.querySelector('.booking-map');
+if (bookingMapElement) {
+  bookingMap();
+}
 const parkingSpaceShow = document.querySelector('.parking_spaces.show');
 if (parkingSpaceShow) {
   toggleDatepicker();
