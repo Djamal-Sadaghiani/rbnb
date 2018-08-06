@@ -30,7 +30,7 @@
           <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
           Log out
           <% end %>
-          <a class="dropdown-item" href="#"> Profile</a>
+          <a class="dropdown-item" href="<%= dashboard_path %>">Dashboard</a>
           <a class="dropdown-item" href="#">Account Settings</a>
         </div>
       </li>
