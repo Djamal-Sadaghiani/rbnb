@@ -1,11 +1,13 @@
-<h1>Cars</h1>
- <table style="width: 100%">
+<div class="cars-cards">
+  <h1>Cars</h1>
+  <table class="cars-table" style="width: 100%">
   <tr>
     <th>License</th>
     <th>Brand</th>
     <th>Model</th>
     <th>Colour</th>
   </tr>
+
   <% @cars.each do |car| %>
   <tr>
     <td> <%= car.license %> </td>
@@ -13,14 +15,16 @@
     <td> <%= car.model %> </td>
     <td> <%= car.colour %> </td>
     <% if policy(car).destroy? %>
-    <td> <%= link_to "Delete", car_path(car), method: :delete, data: {confirm: "Are you sure?" } %> </td>
+    <td class="link"> <%= link_to "Delete", car_path(car), method: :delete, data: {confirm: "Are you sure?" } %> </td>
     <% end %>
     <% if policy(car).edit? %>
-    <td> <%= link_to "Edit", edit_car_path(car) %> </td>
+    <td class="link"> <%= link_to "Edit", edit_car_path(car) %> </td>
     <% end %>
   <% end %>
   </tr>
-</table>
-<% if policy(@cars).create? %>
-  <%= link_to "Add new car", new_car_path %>
-<% end %>
+  </table>
+  <br>
+  <% if policy(@cars).create? %>
+  <strong><%= link_to "Add new car", new_car_path %></strong>
+  <% end %>
+</div>

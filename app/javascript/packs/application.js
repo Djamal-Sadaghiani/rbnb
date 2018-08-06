@@ -10,8 +10,8 @@ import { getLocation } from '../components/location';
 import { success } from '../components/location';
 import { error } from '../components/location';
 import { hi } from '../components/location';
-import { shownoresultMap } from "../components/maps";
 import { bookingMap } from "../components/maps";
+import { shownoresultMap } from "../components/maps"
 import { showStreet} from "../components/maps";
 
 const bookingMapElement = document.querySelector('.booking-map');
