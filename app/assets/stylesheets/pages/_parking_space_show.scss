@@ -3,6 +3,7 @@
   padding-right: 80px;
   padding-left: 80px;
   padding-top: 40px;
+  height: 98vh;
 }
 
 .grid-parking-space-show {
@@ -14,14 +15,10 @@
 
 .parking-space-picture-show {
    grid-row: 3 / span 4;
-   background-color: yellow;
    margin-top: 20px;
-   background-image: url("http://google-street-view.com/wp-content/uploads/2015/01/google-street-view-tight-parking.jpg");
-    background-size: cover;
 }
 
 .parking-space-map-show {
-  background-color: blue;
   grid-row: 1 / span 2;
   grid-column: 1;
 }
@@ -50,6 +47,8 @@
   margin-left: 40px;
 }
 
-
+#map_search {
+  position: sticky !important;
+}
 
 

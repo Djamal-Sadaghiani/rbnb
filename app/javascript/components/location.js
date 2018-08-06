@@ -7,10 +7,6 @@ function getLocation() {
     }
 }
 
-function hi() {
-  console.log("hi")
-}
-
 function success(pos) {
   const crd = pos.coords;
   window.location.href = `/parkingspaces/search?cord=${crd.latitude} ${crd.longitude}`;
