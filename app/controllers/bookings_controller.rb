@@ -30,6 +30,15 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       redirect_to parking_space_booking_path(@booking.parking_space, @booking)
+      account_sid = ENV['TWILIO_SID']
+      auth_token = ENV['TWILIO_AUTH_TOKEN']
+      @client = Twilio::REST::Client.new(account_sid, auth_token)
+      message = @client.messages.create(
+                                       from: 'whatsapp:+14155238886',
+                                       body: "Thank you for booking a parking place with Parkwise. The location of your Parking space is https://www.google.com/maps/search/?api=1&query=#{@booking.parking_space.latitude},#{@booking.parking_space.longitude}",
+                                       to: 'whatsapp:+4915158581723'
+                                     )
+      message.sid
     else
       flash[:alert] = 'Invalid input'
       redirect_to parking_space_path(@parking_space)

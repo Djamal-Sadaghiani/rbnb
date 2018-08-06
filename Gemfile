@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'country_select'
 gem "faker"
+gem "twilio-ruby"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
