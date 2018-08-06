@@ -5,21 +5,22 @@
 <div class="bookings-container flex-container">
 <div class="row" id="bookings-maps-container">
   <% @bookings_data.each_with_index do |booking_data, i| %>
-    <div class="col-xs-12 col-sm-12 col-md-4">
+    <div class="col-xs-12 col-sm-12 col-md-6">
         <!-- MAP -->
-        <div
-          id="booking-map-<%= i %>"
-          style="width: 100%;
-          height: 80%;"
-          class="booking-map"
-          data-markers="<%= booking_data[:markers].to_json %>"
-        ></div>
-        <!-- INFO -->
-        <ul class="my-bookings-list">
-          <li class="my-booking-address"><strong><%= booking_data[:parking_space].address %></strong></li>
-          <p><strong>Start time:</strong> <%= booking_data[:booking].start_time %> | <strong>End time:</strong> <%= booking_data[:booking].end_time %> | <strong>Price: </strong><%= booking_data[:booking].price %>€ | <strong>Status:</strong> <%= booking_data[:booking].status %></p>
-          <div class="my-booking-more-details"><%= link_to "View booking", parking_space_booking_path(booking_data[:parking_space].id, booking_data[:booking].id) %></div>
-        </ul>
+        <div class="card">
+          <div
+            id="booking-map-<%= i %>"
+            style="width: 100%;"
+            class="booking-map"
+            data-markers="<%= booking_data[:markers].to_json %>"
+          ></div>
+          <div class="card-body">
+            <h4 class="card-title"><strong><%= booking_data[:parking_space].address %></strong></h4>
+            <p class="card-text"><strong>Start time:</strong> <%= booking_data[:booking].start_time.strftime("%b %d, %Y") %> | <strong>End time:</strong> <%= booking_data[:booking].end_time.strftime("%b %d, %Y") %> | <strong>Price: </strong><%= booking_data[:booking].price %>€ | <strong>Status:</strong> <%= booking_data[:booking].status %></p>
+            <%= link_to "View booking", parking_space_booking_path(booking_data[:parking_space].id, booking_data[:booking].id), class: "btn btn-primary" %>
+          </div>
+        </div>
+
     </div>
   <% end%>
 </div>
