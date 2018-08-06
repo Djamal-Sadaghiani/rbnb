@@ -1,21 +1,22 @@
 import flatpickr from 'flatpickr';
 
-let totalPrice = document.getElementById("total-price");
-const pricePerHour = parseInt(document.getElementById("booking-price").innerHTML);
 
-function timeDiffInHours(startTime, endTime) {
-  return (endTime - startTime) / 3600000
-};
-
-function priceCalculator(timeDiff) {
-  return (timeDiff * pricePerHour).toFixed(2);
-};
 
 
 const toggleDatepicker = function() {
 
   const startDateinput = document.getElementById('booking_start_time');
   const endDateinput = document.getElementById('booking_end_time');
+  const pricePerHour = parseInt(document.getElementById("booking-price").innerHTML);
+  let totalPrice = document.getElementById("total-price");
+
+  function timeDiffInHours(startTime, endTime) {
+  return (endTime - startTime) / 3600000
+};
+
+function priceCalculator(timeDiff) {
+  return (timeDiff * pricePerHour).toFixed(2);
+};
 
   if (startDateinput && endDateinput) {
     flatpickr(startDateinput, {
