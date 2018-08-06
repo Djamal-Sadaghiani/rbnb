@@ -310,6 +310,18 @@ const searchMap = function () {
     mapTypeId: 'map_style'
     });
     map.setStyle('map_style');
+    const cards = document.querySelectorAll('.card');
+    console.log(cards);
+    console.log(map);
+    cards.forEach((card, index) => {
+      const marker = map.markers[index];
+      card.addEventListener('mouseover', () => {
+        marker.setIcon('https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png');
+      });
+      card.addEventListener('mouseout', () => {
+        marker.setIcon('https://image.ibb.co/hdk2gK/map_marker_black.png');
+      });
+    })
     }
 }
 
