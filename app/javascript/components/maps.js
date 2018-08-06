@@ -330,9 +330,13 @@ const searchMap = function () {
     cards.forEach((card, index) => {
       const marker = map.markers[index];
       card.addEventListener('mouseover', () => {
+        // map.setCenter(marker);
+        marker.infoWindow.open(map, marker);
         marker.setIcon('https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png');
       });
       card.addEventListener('mouseout', () => {
+        // map.fitLatLngBounds(markers);
+        marker.infoWindow.close(map, marker);
         marker.setIcon('https://image.ibb.co/hdk2gK/map_marker_black.png');
       });
     })
