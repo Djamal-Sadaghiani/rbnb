@@ -1,4 +1,4 @@
-  import "./application.css";
+import "./application.css";
 import "bootstrap";
 import AOS from "aos";
 import { toggleDatepicker } from "../components/booking_form"
@@ -9,6 +9,7 @@ import { autocomplete_city } from '../components/autocomplete';
 import { getLocation } from '../components/location';
 import { success } from '../components/location';
 import { error } from '../components/location';
+import { hi } from '../components/location';
 import { bookingMap } from "../components/maps";
 import { shownoresultMap } from "../components/maps"
 import { showStreet} from "../components/maps";
