@@ -10,7 +10,11 @@ class ParkingSpacesController < ApplicationController
   def show
     @marker = { lat: @parking_space.latitude, lng: @parking_space.longitude}
     @booking = Booking.new
-    @licenses = current_user.get_licenses
+    if current_user
+      @licenses = current_user.get_licenses
+    else
+      @licenses = ["No cars - are you logged in correctly?"]
+    end
     authorize @parking_space
   end
 

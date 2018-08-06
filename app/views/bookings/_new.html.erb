@@ -4,6 +4,8 @@
   <%= f.input :end_time, as: :string %>
   <%= f.input :car_id, collection: @licenses %>
   <%#= select_tag "license", options_for_select(@licenses) %>
+  <h5>Total price: <span id="total-price">0</span>€</h5>
+  <br>
 
   <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
