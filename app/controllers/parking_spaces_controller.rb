@@ -10,7 +10,11 @@ class ParkingSpacesController < ApplicationController
   def show
     @marker = { lat: @parking_space.latitude, lng: @parking_space.longitude}
     @booking = Booking.new
-    @licenses = current_user.get_licenses
+    if current_user
+      @licenses = current_user.get_licenses
+    else
+      @licenses = ["No cars - are you logged in correctly?"]
+    end
     authorize @parking_space
   end
 
@@ -71,7 +75,9 @@ class ParkingSpacesController < ApplicationController
       @markers = @parking_spaces.map do |space|
         {
           lat: space.latitude,
-          lng: space.longitude#,
+          lng: space.longitude,
+          infoWindow: { content: render_to_string(partial: "/parking_spaces/map_box", locals: { space: space }) },
+          icon: view_context.image_path("map-marker-black.png"),
         }
       end
     end

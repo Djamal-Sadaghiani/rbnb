@@ -1,12 +1,12 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <div id="map_search" style="height: 92.66vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
+  <div class="search-content">
+    <div class="map-holder">
+      <div id="map_search" style="height: 100vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
     </div>
-    <div class="col card-holder">
+    <div class="card-holder">
       <% @parking_spaces.each_with_index do |space, index| %>
-      <% break if index >= 4 %>
-      <div class="card w-75 search-card" data-aos="fade-down" data-aos-delay="<%= 300 + 400 * index %>">
+      <div class="card w-75 search-card" data-aos="fade-down" data-aos-offset="-75"
+      data-aos-delay="<%= 100 + 400 * index < 2100 ? 100 + 400 * index : 150 %>">
         <div class="card-body">
           <h5 class="card-title"><%= space.address %></h5>
           <div class="card-icons">
@@ -18,7 +18,7 @@
             <div class="icons-right">
             <i class="fas fa-money-bill-alt">    <%= space.price_per_hour / 100.00 %>$ per hour</i>
             <br>
-            <i class="fas fa-globe"> -> 300m away</i>
+            <i class="fas fa-globe"> -> <%= space.distance_to(@location) %>m away</i>
           </div>
           </div>
         </div>
