@@ -4,6 +4,23 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @bookings_data = []
+    @bookings.each do |booking|
+      @parking_space = ParkingSpace.find_by(id: booking.parking_space_id)
+      @markers =
+        {
+          lat: @parking_space.latitude,
+          lng: @parking_space.longitude
+        }
+
+      @booking_data = {
+        booking: booking,
+        markers: @markers,
+        parking_space: @parking_space
+      }
+
+      @bookings_data << @booking_data
+    end
   end
 
   def create

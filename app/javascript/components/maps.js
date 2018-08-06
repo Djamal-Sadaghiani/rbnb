@@ -313,6 +313,42 @@ const searchMap = function () {
     }
 }
 
+const bookingMap = function (){
+  const bookingMaps = document.querySelectorAll('.booking-map');
+  for (let i = 0, len = bookingMaps.length; i < len; i++) {
+
+    console.log(bookingMaps[i] + " ---- " + i);
+    if (bookingMaps[i]) {
+    const map = new GMaps({ el: '#booking-map-' + i, lat: 0, lng: 0 });
+    const markers = JSON.parse(bookingMaps[i].dataset.markers);
+    console.log(markers);
+    map.addMarkers([markers]);
+    map.setCenter(markers.lat, markers.lng);
+    map.setZoom(14);
+    map.addStyle({
+    styles: styles,
+    mapTypeId: 'map_style'
+    });
+    map.setStyle('map_style');
+    }
+  };
+}
+
+// if (mapElement) { // don't try to build a map if there's no div#map to inject in
+//   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+//   const markers = JSON.parse(mapElement.dataset.markers);
+//   map.addMarkers(markers);
+//   if (markers.length === 0) {
+//     map.setZoom(2);
+//   } else if (markers.length === 1) {
+//     map.setCenter(markers[0].lat, markers[0].lng);
+//     map.setZoom(14);
+//   } else {
+//     map.fitLatLngBounds(markers);
+//   }
+// }
+
+export { bookingMap};
 export { showMap };
 export { searchMap };
 export { shownoresultMap };
