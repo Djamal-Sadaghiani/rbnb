@@ -1,7 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "_parking_space_show";
+@import "dashboard";
 @import "search";
 @import "_parking_space_show";
 @import "_bookings_index";
 @import "_booking_show";
 @import "_add_space";
+@import "_booking_new"

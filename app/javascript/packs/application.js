@@ -1,4 +1,4 @@
-import "./application.css";
+  import "./application.css";
 import "bootstrap";
 import AOS from "aos";
 import { toggleDatepicker } from "../components/booking_form"
