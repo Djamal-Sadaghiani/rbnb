@@ -1,12 +1,11 @@
 
 <h1 class="my-bookings-title">Bookings</h1>
 
-<!-- TEST -->
 <div class="bookings-container">
   <div class="row" id="bookings-maps-container">
     <% @bookings_data.each_with_index do |booking_data, i| %>
     <div class="col-xs-12 col-sm-12 col-md-6">
-      <!-- MAP -->
+
       <div class="card text-center">
         <div
         id="booking-map-<%= i %>"
