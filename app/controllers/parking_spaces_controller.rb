@@ -1,7 +1,7 @@
 class ParkingSpacesController < ApplicationController
   before_action :set_parking_space, only: [:show, :update, :edit, :destroy]
-  skip_before_action :authenticate_user!, only: :search
-  skip_after_action :verify_authorized, only: :search
+  skip_before_action :authenticate_user!, only: [:search, :show]
+  skip_after_action :verify_authorized, only: [:search, :show]
 
   def index
     @parking_spaces = policy_scope(ParkingSpace).order(created_at: :desc)
@@ -59,12 +59,21 @@ class ParkingSpacesController < ApplicationController
     else
       @location = params[:cord].split(" ")
     end
-    @parking_spaces = ParkingSpace.near(@location,5)
-    @markers = @parking_spaces.map do |space|
-      {
-        lat: space.latitude,
-        lng: space.longitude#,
-      }
+    @parking_spaces = ParkingSpace.near(@location,1)
+    if @parking_spaces.length == 0
+      @markers =
+        {
+          lat: @location[0],
+          lng: @location[1],
+        }
+      render :add_space
+    else
+      @markers = @parking_spaces.map do |space|
+        {
+          lat: space.latitude,
+          lng: space.longitude#,
+        }
+      end
     end
   end
 

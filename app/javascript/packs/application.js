@@ -10,6 +10,7 @@ import { getLocation } from '../components/location';
 import { success } from '../components/location';
 import { error } from '../components/location';
 import { hi } from '../components/location';
+import { shownoresultMap } from "../components/maps"
 
 
 const parkingSpaceShow = document.querySelector('.parking_spaces.show');
@@ -37,6 +38,7 @@ if (sign_up) {
 
 const aossearch = document.querySelector('.parking_spaces.search');
 if (parkingSpaceSearch) {
-  AOS.init();
+  shownoresultMap();
 }
 
+AOS.init();

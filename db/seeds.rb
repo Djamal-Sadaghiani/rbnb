@@ -12,7 +12,6 @@ user = User.new ({
   email: "ruby@ruby.com",
   avatar: "https://qph.fs.quoracdn.net/main-qimg-a8cafcc4acb60054c65bd209e7f5cc79-c",
   date_of_birth: Date.today,
-  nationality: "German",
   phone_number: "4204204240240240",
   password: "testtest",
   password_confirmation: "testtest"
@@ -27,9 +26,7 @@ user2 = User.new ({
   postcode: "420",
   country: "Germany",
   email: "peterparker@rails.com",
-  avatar: "https://qph.fs.quoracdn.net/main-qimg-a8cafcc4acb60054c65bd209e7f5cc79-c",
   date_of_birth: Date.today,
-  nationality: "German",
   phone_number: "4204204240240240",
   password: "testtest",
   password_confirmation: "testtest"
@@ -52,23 +49,28 @@ end
 puts "-- db:seed => created five cars"
 #Parking_spaces
 
-50.times do
+5000.times do
   space = ParkingSpace.new({
     size: rand(4..12),
     user: user2,
     address: Faker::Address.street_address,
-    city: "Canggu",
-    postcode: 80351,
-    country: "Indonesia",
+    city: "London",
+    postcode: "WC2N 5DU",
+    country: "United Kingdom",
     category: "Garage",
     price_per_hour: rand(100..500),
-    availability: "somethingishere"
+    availability: "somethingishere",
+    latitude: (51.4 + rand(0..3000) / 10000.00).round(4),
+    longitude: (-0.3 + rand(0..5000) / 10000.00).round(4)
   })
   space.save
 end
-puts "-- db:seed => created fifty parking spaces"
-#Bookings
+# London Area Coordinates
+# 51.4 => 51.7
+# 0.2 => -0.3
+puts "-- db:seed => created five thousand parking spaces"
 
+#Bookings
 5. times do
   booking = Booking.new({
     start_time: DateTime.new(2018,2,3,4,5,6),
@@ -82,3 +84,6 @@ puts "-- db:seed => created fifty parking spaces"
 end
 puts "-- db:seed => created five parking bookings"
 puts "-- db:seed => SUCCESS"
+
+
+

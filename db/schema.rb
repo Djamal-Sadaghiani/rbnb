@@ -82,9 +82,8 @@ ActiveRecord::Schema.define(version: 2018_08_01_095144) do
     t.string "city"
     t.string "postcode"
     t.string "country"
-    t.string "avatar"
+    t.string "avatar", default: "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
     t.date "date_of_birth"
-    t.string "nationality"
     t.string "phone_number"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

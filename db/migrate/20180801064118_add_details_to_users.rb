@@ -6,9 +6,8 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :city, :string
     add_column :users, :postcode, :string
     add_column :users, :country, :string
-    add_column :users, :avatar, :string
+    add_column :users, :avatar, :string, default: "https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png"
     add_column :users, :date_of_birth, :date
-    add_column :users, :nationality, :string
     add_column :users, :phone_number, :string
   end
 end
