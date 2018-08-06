@@ -310,6 +310,7 @@ const searchMap = function () {
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
     const map = new GMaps({ el: '#map_search', lat: 0, lng: 0 });
     const markers = JSON.parse(mapElement.dataset.markers);
+    const search = JSON.parse(mapElement.dataset.search);
     map.addMarkers(markers);
     if (markers.length === 0) {
       map.setZoom(2);
@@ -330,9 +331,13 @@ const searchMap = function () {
     cards.forEach((card, index) => {
       const marker = map.markers[index];
       card.addEventListener('mouseover', () => {
+        map.setCenter(markers[index]);
+        marker.infoWindow.open(map, marker);
         marker.setIcon('https://raw.githubusercontent.com/Concept211/Google-Maps-Markers/master/images/marker_red.png');
       });
       card.addEventListener('mouseout', () => {
+        map.fitLatLngBounds(markers);
+        marker.infoWindow.close(map, marker);
         marker.setIcon('https://image.ibb.co/hdk2gK/map_marker_black.png');
       });
     })
@@ -340,6 +345,6 @@ const searchMap = function () {
 }
 
 export { showMap };
-export {showStreet};
+export { showStreet };
 export { searchMap };
 export { shownoresultMap };

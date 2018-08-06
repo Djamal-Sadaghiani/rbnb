@@ -18,7 +18,7 @@
             <div class="icons-right">
             <i class="fas fa-money-bill-alt">    <%= space.price_per_hour / 100.00 %>$ per hour</i>
             <br>
-            <i class="fas fa-globe"> -> 300m away</i>
+            <i class="fas fa-globe"> -> <%= space.distance_to(@location) %>m away</i>
           </div>
           </div>
         </div>
