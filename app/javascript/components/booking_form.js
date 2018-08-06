@@ -7,15 +7,15 @@ const toggleDatepicker = function() {
 
   const startDateinput = document.getElementById('booking_start_time');
   const endDateinput = document.getElementById('booking_end_time');
-  const pricePerHour = parseInt(document.getElementById("booking-price").innerHTML);
+  const pricePerHour = parseFloat(document.getElementById("booking-price").innerHTML);
   let totalPrice = document.getElementById("total-price");
 
   function timeDiffInHours(startTime, endTime) {
-  return (endTime - startTime) / 3600000
-};
+    return ((endTime - startTime) / 3600000);
+  };
 
 function priceCalculator(timeDiff) {
-  return (timeDiff * pricePerHour).toFixed(2);
+  return (timeDiff * pricePerHour)
 };
 
   if (startDateinput && endDateinput) {
@@ -46,6 +46,7 @@ function priceCalculator(timeDiff) {
 
           if (startTime !== "" && endTime !== "") {
             let result = timeDiffInHours(Date.parse(startTime), Date.parse(endTime));
+            console.log(pricePerHour);
             let price = priceCalculator(result);
             console.log(price);
             totalPrice.innerHTML = price;
