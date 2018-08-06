@@ -71,7 +71,9 @@ class ParkingSpacesController < ApplicationController
       @markers = @parking_spaces.map do |space|
         {
           lat: space.latitude,
-          lng: space.longitude#,
+          lng: space.longitude,
+          infoWindow: { content: render_to_string(partial: "/parking_spaces/map_box", locals: { space: space }) },
+          icon: view_context.image_path("map-marker-black.png"),
         }
       end
     end

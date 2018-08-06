@@ -5,7 +5,7 @@
     </div>
     <div class="card-holder">
       <% @parking_spaces.each_with_index do |space, index| %>
-      <div class="card w-75 search-card" data-aos="fade-down" data-aos-delay="<%= 100 + 400 * index < 2000 ? 100 + 400 * index : 150 %>">
+      <div class="card w-75 search-card" data-aos="fade-down" data-aos-delay="<%= 100 + 400 * index < 1600 ? 100 + 400 * index : 150 %>">
         <div class="card-body">
           <h5 class="card-title"><%= space.address %></h5>
           <div class="card-icons">
