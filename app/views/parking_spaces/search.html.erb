@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="search-content">
     <div class="map-holder">
-      <div id="map_search" style="height: 100vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
+      <div id="map_search" style="height: 100vh; width: 50vw" data-markers="<%= @markers.to_json %>" data-search="<%= @location.to_json %>"></div>
     </div>
     <div class="card-holder">
       <% @parking_spaces.each_with_index do |space, index| %>
@@ -18,7 +18,7 @@
             <div class="icons-right">
             <i class="fas fa-money-bill-alt">    <%= space.price_per_hour / 100.00 %>$ per hour</i>
             <br>
-            <i class="fas fa-globe"> -> 300m away</i>
+            <i class="fas fa-globe"> -> <%= space.distance_to(@location) %>m away</i>
           </div>
           </div>
         </div>
