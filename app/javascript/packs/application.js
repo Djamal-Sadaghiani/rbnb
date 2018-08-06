@@ -11,14 +11,12 @@ import { success } from '../components/location';
 import { error } from '../components/location';
 import { hi } from '../components/location';
 import { shownoresultMap } from "../components/maps";
-import { priceCalculator } from "../components/booking_price";
 
 
 const parkingSpaceShow = document.querySelector('.parking_spaces.show');
 if (parkingSpaceShow) {
   toggleDatepicker();
   showMap();
-  priceCalculator();
 }
 
 const parkingSpaceSearch = document.querySelector('.parking_spaces.search');
