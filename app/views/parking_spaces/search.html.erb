@@ -1,11 +1,12 @@
 <div class="container-fluid">
   <div class="search-content">
     <div class="map-holder">
-      <div id="map_search" style="height: 94vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
+      <div id="map_search" style="height: 100vh; width: 50vw" data-markers="<%= @markers.to_json %>"></div>
     </div>
     <div class="card-holder">
       <% @parking_spaces.each_with_index do |space, index| %>
-      <div class="card w-75 search-card" data-aos="fade-down" data-aos-delay="<%= 100 + 400 * index < 1600 ? 100 + 400 * index : 150 %>">
+      <div class="card w-75 search-card" data-aos="fade-down" data-aos-offset="-75"
+      data-aos-delay="<%= 100 + 400 * index < 2100 ? 100 + 400 * index : 150 %>">
         <div class="card-body">
           <h5 class="card-title"><%= space.address %></h5>
           <div class="card-icons">
