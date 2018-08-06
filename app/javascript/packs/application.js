@@ -10,11 +10,13 @@ import { getLocation } from '../components/location';
 import { success } from '../components/location';
 import { error } from '../components/location';
 import { shownoresultMap } from "../components/maps"
+import { showStreet} from "../components/maps";
 
 const parkingSpaceShow = document.querySelector('.parking_spaces.show');
 if (parkingSpaceShow) {
   toggleDatepicker();
   showMap();
+  showStreet();
 }
 
 const parkingSpaceSearch = document.querySelector('.parking_spaces.search');

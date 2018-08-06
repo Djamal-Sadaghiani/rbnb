@@ -272,6 +272,20 @@ const showMap = function (){
     }
 }
 
+const showStreet = function () {
+  const streetElement = document.getElementById("street-view");
+  const markers = JSON.parse(streetElement.dataset.markers);
+  const panorama = new google.maps.StreetViewPanorama(
+            streetElement, {
+              position: markers,
+              pov: {
+                heading: 34,
+                pitch: 10
+              }
+            });
+  streetMap.setStreetView(panorama);
+}
+
 
 const shownoresultMap = function (){
     const mapElement = document.getElementById('map_noresult');
@@ -326,5 +340,6 @@ const searchMap = function () {
 }
 
 export { showMap };
+export {showStreet};
 export { searchMap };
 export { shownoresultMap };
