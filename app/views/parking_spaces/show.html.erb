@@ -5,7 +5,9 @@
       <div id="map_show" style="height: 100%; width: 100%" data-markers="<%= @marker.to_json %>"></div>
     </div>
 
-    <div class="parking-space-picture-show"></div>
+    <div class="parking-space-picture-show">
+      <div id="street-view" style="height: 100%; width: 100%" data-markers="<%= @marker.to_json %>"></div>
+    </div>
 
     <div class="parking-space-show">
       <h2><%= @parking_space.address %>-</h2> <p class="price">Price Per Hour: <span id="booking-price"><%= @parking_space.price_per_hour / 100.00%></span>€</p>
