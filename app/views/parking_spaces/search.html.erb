@@ -11,14 +11,22 @@
           <h5 class="card-title"><%= space.address %></h5>
           <div class="card-icons">
             <div class="icons-left">
-            <i class="fas fa-parking">    <%= space.category %></i>
+            <div>
+            <i class="fas fa-parking"></i> <%= space.category %>
+            </div>
             <br>
-            <i class="fas fa-square">    <%= space.size %>m³</i>
+            <div>
+            <i class="fas fa-square"></i> <%= space.size %>m³
+            </div>
             </div>
             <div class="icons-right">
-            <i class="fas fa-money-bill-alt">    <%= space.price_per_hour / 100.00 %>$ per hour</i>
+            <div>
+            <i class="fas fa-money-bill-alt"></i> <%= space.price_per_hour / 100.00 %>€ per hour
+            </div>
             <br>
-            <i class="fas fa-globe"> -> <%= space.distance_to(@location) %>m away</i>
+            <div>
+            <i class="fas fa-globe"> </i> <%= (space.distance_to(@location)*1000).round %>m away
+            </div>
           </div>
           </div>
         </div>
