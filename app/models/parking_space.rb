@@ -10,7 +10,7 @@ class ParkingSpace < ApplicationRecord
   validates :price_per_hour, presence: true
   validates :user, presence: true
   geocoded_by :geocodedata
-  # after_validation :geocode
+  after_validation :geocode
 
   def geocodedata
     "#{address}, #{postcode} #{city}, #{country}"
