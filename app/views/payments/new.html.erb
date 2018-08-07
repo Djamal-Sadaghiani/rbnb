@@ -1,0 +1,39 @@
+    <div class="container">
+      <div class="row">
+        <div class="holder">
+          <div class="content-card" data-aos="fade-down" data-aos-delay="750">
+            <div class="content-card-content">
+              <%= form_tag parking_space_booking_payments_path(@booking.parking_space, @booking) do %>
+
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Parking Spot</th>
+                      <th scope="col">Duration</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><%= @booking.parking_space.address %></td>
+                      <td><%= (@booking.end_time - @booking.start_time) / (60*60) %> hours</td>
+                      <td><%= (@booking.price / 100.00).round(2) %>€</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-name="Parking Space"
+                  data-email="<%= current_user.email %>"
+                  data-description="Parking Space: <%= @booking.parking_space.address %>"
+                  data-amount="<%= @booking.price %>"
+                  data-currency="EUR"></script>
+
+              <% end %>
+
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>

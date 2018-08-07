@@ -14,16 +14,16 @@
   <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <!-- <div class="container">
-      <div class="row">
-        <div class="holder">
-          <div class="content-card" data-aos="fade-down" data-aos-delay="750">
+   <!--  <div class="container">
+      <div class="row"> -->
+        <div class="bookings-holder">
+         <!--  <div class="content-card" data-aos="fade-down" data-aos-delay="750">
             <div class="content-card-content"> -->
               <%= yield %>
-        <!--    </div>
-          </div>
+           <!-- </div>
+          </div> -->
         </div>
-      </div>
+     <!--  </div>
     </div> -->
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_CLIENT_KEY']}" %>
     <%= javascript_include_tag 'application' %>
