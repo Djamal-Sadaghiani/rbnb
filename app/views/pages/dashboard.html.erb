@@ -22,69 +22,54 @@
               <%= current_user.city  %>,
               <%= current_user.postcode  %>,
               <%= current_user.country  %>
-
             </td>
           </tr>
         </table>
-        <%= link_to "Edit Details",edit_user_registration_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to "Edit Details",edit_user_registration_path, class: "btn btn-primary btn-lg dashboard-button" %>
       </div>
     </div>
-    <div class="dashboard-bookings">
-      <div class="card-content">
-          <h3>Bookings </h3> <%= link_to "View Bookings",bookings_path, class: "btn btn-primary" %>
-          <% current_user.car_bookings.each do |booking| %>
-          <% parking_space = ParkingSpace.find_by(id: booking.parking_space_id) %>
-          <% car = Car.find_by(id: booking.car_id) %>
-          <p>
-            <strong>
-              <%= parking_space.address %>,<%= parking_space.city %>
-            </strong>
-            - <%= booking.status %>
-          </p>
-          <p>
-            <%= booking.start_time %> -
-            <%= booking.end_time %>
-            . <%= car.license %>
-          </p>
-        <% end %>
+
+
+    <div class="dashboard-upcoming-bookings">
+      <div class="content-card upcoming-booking-card">
+
+      <% @parking_spaces = current_user.parking_spaces %>
+
+          <h3>Upcoming bookings</h3>
+          <br>
+          <table class="dashboard-bookings-table" style="width: 100%">
+            <tr>
+              <th>Address</th>
+              <th>Dates</th>
+              <th>Revenue</th>
+            </tr>
+            <% @parking_spaces.each do |parking_space| %>
+              <% if parking_space.bookings %>
+                <% @bookings = parking_space.bookings %>
+                <% @bookings.each_with_index do |booking, index| %>
+                <% if index < 5  %>
+                  <tr>
+                    <td><%= booking.parking_space.address%></td>
+                    <td><%= booking.start_time.strftime("%b %e, %l:%M %p") %> - <%= booking.end_time.strftime("%b %e, %l:%M %p") %></td>
+                    <td><%= booking.price / 100.00 %>€</li><td>
+                    <!-- <td><%= link_to "view", parking_space_booking_path(booking.parking_space_id, booking.id) %></td> -->
+                  </tr>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </table>
+
       </div>
     </div>
-    <div class="dashboard-spaces">
+
+    <div class="dashboard-revenue">
       <div class="card-content">
-        <h3>Space </h3>
-        <%= link_to "View  All Spaces", parking_spaces_path, class: "btn btn-primary" %>
-        <% current_user.cars.each do |space|  %>
-          <%= space. %>
-
-        <% end %>
-
-
-      </div>
-
-    </div>
-    <div class="dashboard-cars">
-
-      <div class="card-content">
-        <h3>Cars</h3>
-        <%= link_to "View All Cars", cars_path, class: "btn btn-primary" %>
-        <% current_user.cars.each do |car|  %>
-            <%= car.license %>
-            <%= car.colour %>
-            <%= car.brand %>
-            <%= car.model %>
-        <% end %>
+        <h3>Revenue</h3>
 
       </div>
 
     </div>
-    <!-- <div class="description">
 
-      <div class="card-content">
-        <h3>TODO: Add Map With Closest Spaces</h3>
-        <p class="text-justify">
-          I am a full-stack developer with 9 years of experience working in startups. Scratching your own itch? Working on a startup project? Lots of ideas but frustrated that you can't code them? Confused with agencies' or freelances' quotes? No clue when a developer is talking? Time to learn to code with Le Wagon with a 9-week intensive and immersive bootcamp!
-        </p>
-      </div>
-    </div> -->
   </div>
 </div>

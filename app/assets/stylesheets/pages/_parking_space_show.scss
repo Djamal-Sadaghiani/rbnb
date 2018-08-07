@@ -39,6 +39,21 @@
   }
 }
 
+.booking-parking-space-show {
+  padding-left: 20px;
+  grid-row: 2 / span 4;
+  grid-column: 2;
+  h2 {
+    font-size: 60px;
+    display: inline-block;
+  };
+  .price {
+    color: $blue;
+    display: inline-block;
+    font-size: 25px;
+  }
+}
+
 #map_search {
   position: sticky !important;
 }
