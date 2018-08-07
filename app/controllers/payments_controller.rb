@@ -18,7 +18,7 @@ class PaymentsController < ApplicationController
     currency:     "eur"
     )
     @booking.update(payment: charge.to_json, status: 'paid')
-    redirect_to parking_space_booking_path(@booking.parking_space, @booking)
+    redirect_to bookings_path
     account_sid = ENV['TWILIO_SID']
     auth_token = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
