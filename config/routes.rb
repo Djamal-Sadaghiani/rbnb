@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   get "parkingspaces/search", to: "parking_spaces#search", as: :search_parkingspace
   resources :parking_spaces do
-    resources :bookings, only: [:new, :create, :show, :edit, :update]
+    resources :bookings, only: [:new, :create, :show, :edit, :update] do
+      resources :payments, only: [:new, :create]
+    end
   end
   resources :cars
   resources :bookings, only: [:index]

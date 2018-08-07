@@ -9,6 +9,7 @@ gem 'rails', '5.2.0'
 gem 'redis'
 gem "pundit"
 gem "geocoder"
+gem 'money-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap'
@@ -21,6 +22,7 @@ gem 'devise'
 gem 'country_select'
 gem "faker"
 gem "twilio-ruby"
+gem "stripe"
 
 group :development do
   gem 'web-console', '>= 3.3.0'

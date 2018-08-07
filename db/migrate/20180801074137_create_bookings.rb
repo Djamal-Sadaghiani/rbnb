@@ -7,6 +7,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.datetime :end_time
       t.integer :price
       t.integer :status, null: false, default: 0
+      t.jsonb :payment
 
       t.timestamps
     end
