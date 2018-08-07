@@ -11,8 +11,9 @@ import { success } from '../components/location';
 import { error } from '../components/location';
 import { hi } from '../components/location';
 import { bookingMap } from "../components/maps";
-import { shownoresultMap } from "../components/maps"
+import { shownoresultMap } from "../components/maps";
 import { showStreet} from "../components/maps";
+import { revenueChart } from "../components/revenue_chart";
 import { parkingMap } from "../components/maps";
 
 const parkingMapElement = document.querySelector('.parking-map');
@@ -60,5 +61,11 @@ const aossearch = document.querySelector('.parking_spaces.search');
 if (parkingSpaceSearch) {
   shownoresultMap();
 }
+
+const dashboard = document.querySelector('.pages.dashboard');
+if (dashboard) {
+  console.log("hello");
+  revenueChart();
+};
 
 AOS.init();

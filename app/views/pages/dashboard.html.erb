@@ -17,7 +17,7 @@
           </tr>
           <tr>
             <td><i class="fas fa-map-marker"></i></td>
-            <td>
+            <td style="padding-bottom: 20px">
               <%= current_user.address  %>,
               <%= current_user.city  %>,
               <%= current_user.postcode  %>,
@@ -25,7 +25,7 @@
             </td>
           </tr>
         </table>
-        <%= link_to "Edit Details",edit_user_registration_path, class: "btn btn-primary btn-lg dashboard-button" %>
+        <%= link_to "Edit Details", edit_user_registration_path, class: "dashboard-button" %>
       </div>
     </div>
 
@@ -64,9 +64,13 @@
     </div>
 
     <div class="dashboard-revenue">
-      <div class="card-content">
+      <div class="revenues-card">
         <h3>Revenue</h3>
 
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
       </div>
 
     </div>
