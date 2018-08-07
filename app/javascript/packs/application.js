@@ -13,6 +13,7 @@ import { hi } from '../components/location';
 import { bookingMap } from "../components/maps";
 import { shownoresultMap } from "../components/maps"
 import { showStreet} from "../components/maps";
+import { revenueChart } from "../components/revenue_chart";
 
 const bookingMapElement = document.querySelector('.booking-map');
 if (bookingMapElement) {
@@ -52,5 +53,11 @@ const aossearch = document.querySelector('.parking_spaces.search');
 if (parkingSpaceSearch) {
   shownoresultMap();
 }
+
+const dashboard = document.querySelector('.pages.dashboard');
+if (dashboard) {
+  console.log("hello");
+  revenueChart();
+};
 
 AOS.init();

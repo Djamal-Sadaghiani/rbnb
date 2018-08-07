@@ -13,6 +13,13 @@
   padding-left: 20px;
 }
 
+.revenues-card {
+  width:400px;
+  height: 300px;
+  text-align: left;
+  padding-left: 20px;
+}
+
 .profile {
   grid-column: 1 / span 1;
   grid-row: 1 / span 2;
@@ -34,6 +41,7 @@
   padding: 20px;
   display: flex;
   margin: 10px;
+  text-align: left;
 }
 
 .profile {
@@ -53,11 +61,14 @@
 }
 
 .dashboard-button {
-  height: 30px;
-  width: 120px;
-  margin-top: 20px;
-  padding-bottom: 5px !important;
-  a {
-    font-size: 20px !important;
-  }
+    height: 30px;
+    width: 120px;
+    background-color: black;
+    padding-bottom: 5px !important;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin-top: 50px;
 }
