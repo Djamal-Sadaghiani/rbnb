@@ -1,9 +1,16 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 50% 50%;
   height: calc(100vh - 70px) ;
   padding: 15px;
+}
+
+.upcoming-booking-card {
+  width: 100%;
+  height: 90%;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .profile {
@@ -11,48 +18,27 @@
   grid-row: 1 / span 2;
 }
 
-.dashboard-bookings {
+.dashboard-upcomign-bookings {
   grid-column: 2 / span 2;
   grid-row: 1 / span 1;
+  text-align: left;
 }
 
-.dashboard-cars {
+.dashboard-revenue {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
 }
-.dashboard-spaces {
-  grid-column: 3 / span 1;
-  grid-row: 2 / span 1;
-}
-// .description {
-//   grid-column: 2 / span 3;
-//   grid-row: 1 / span 2;
-// }
 
-// .stat {
-//   background: white;
-//   padding: 20px;
-
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
-//   margin: 10px;
-// }
-
-.dashboard-cars, .dashboard-spaces, .dashboard-bookings {
+.dashboard-revenue, .dashboard-upcoming-bookings {
   background: white;
   padding: 20px;
-
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   margin: 10px;
 }
 
 .profile {
   background: white;
   padding: 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -64,4 +50,14 @@
   width: 200px;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.dashboard-button {
+  height: 30px;
+  width: 120px;
+  margin-top: 20px;
+  padding-bottom: 5px !important;
+  a {
+    font-size: 20px !important;
+  }
 }
