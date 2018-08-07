@@ -1,7 +1,8 @@
 
-<h1 class="my-bookings-title">Bookings</h1>
+
 
 <div class="bookings-container">
+  <h1 class="my-bookings-title">Bookings</h1>
   <div class="row" id="bookings-maps-container">
     <% @bookings_data.each_with_index do |booking_data, i| %>
     <div class="col-xs-12 col-sm-12 col-md-6">
@@ -14,8 +15,8 @@
         data-markers="<%= booking_data[:markers].to_json %>"
         ></div>
         <div class="card-body">
-          <h4 class="card-title"><strong><%= booking_data[:parking_space].address %></strong></h4>
-          <h5><%= booking_data[:booking].status.capitalize%></h5>
+          <h5 class="card-title"><strong><%= booking_data[:parking_space].address %></strong></h5>
+          <h6><%= booking_data[:booking].status.capitalize%></h6>
           <p class="card-text">
             <strong>Start Time:</strong>
             <%= booking_data[:booking].start_time.strftime("%b %e, %l:%M %p") %><br />
