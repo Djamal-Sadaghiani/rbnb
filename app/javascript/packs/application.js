@@ -25,6 +25,12 @@ if (parkingSpaceShow) {
   showStreet();
 }
 
+const bookingShow = document.querySelector('.bookings.show');
+if (bookingShow) {
+  showMap();
+  showStreet();
+}
+
 const parkingSpaceSearch = document.querySelector('.parking_spaces.search');
 if (parkingSpaceSearch) {
   searchMap();

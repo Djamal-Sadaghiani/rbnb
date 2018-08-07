@@ -1,15 +1,55 @@
-.my-booking-title {
-  margin-top: 20px;
-  margin-left: 20px;
+
+.grid-booking-space-show {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: 120px 250px 80px 200px;
+  margin-bottom: 50px;
 }
 
-.my-booking-address {
-  font-size: 22px;
-  color: #4A9BDE;
+.booking-space-picture-show {
+   grid-row: 3 / span 4;
+   margin-top: 20px;
 }
 
-.my-booking-list {
-  margin-left: 20px;
-  margin-top: 20px;
+.booking-space-map-show {
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+
+.booking-space-show {
+  padding-left: 20px;
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 3;
+
+  h2 {
+    font-size: 40px;
+    display: inline-block;
+  };
+  .price {
+    color: $blue;
+    display: inline-block;
+    font-size: 25px;
+  }
+}
+
+.booking-buttons {
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+.booking-button {
+  height: 35px;
+  width: 175px;
+  text-align: center;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding-top: 5px;
+  a {
+    color: white;
+  }
 }
 
