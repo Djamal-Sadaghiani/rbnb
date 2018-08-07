@@ -5,6 +5,20 @@ class ParkingSpacesController < ApplicationController
 
   def index
     @parking_spaces = policy_scope(ParkingSpace).order(created_at: :desc)
+    @parking_spaces_data = []
+    @parking_spaces.each do |space|
+      @markers =
+        {
+          lat: space.latitude,
+          lng: space.longitude
+        }
+
+      @parking_space_data = {
+        markers: @markers,
+        parking_space: space
+      }
+      @parking_spaces_data << @parking_space_data
+    end
   end
 
   def show
