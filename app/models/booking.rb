@@ -4,7 +4,7 @@ class Booking < ApplicationRecord
   validates :parking_space, :car, :start_time, :end_time, :status, presence: true
   after_validation :calculate_price
 
-  enum status: [:unconfirmed, :confirmed, :rejected, :cancelled]
+  enum status: [:pending, :confirmed, :rejected, :cancelled, :paid]
 
   def calculate_price
     parkinng_space = ParkingSpace.find(parking_space_id)

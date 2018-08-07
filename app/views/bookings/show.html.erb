@@ -1,9 +1,29 @@
-<h2 class="my-booking-title">Booking at <%= @parking_space.address %></h2>
+<div class="container-text-center-parking-space-show">
+  <div class="grid-booking-space-show">
 
-<ul class="my-booking-list">
-  <li><strong> Start time:</strong> <%= @booking.start_time %> | <strong>End time:</strong> <%= @booking.end_time %> </li>
-  <li><strong>Car-license:</strong> <%= @car.license %></li>
-  <li><strong>Price:</strong> <%= @booking.price/ 100 %>€</li>
-  <li><strong>Status:</strong> <%= @booking.status %></li>
-  <%= link_to "Edit booking", edit_parking_space_booking_path(@parking_space, @booking) %>
-</ul>
+    <div class="booking-space-map-show">
+      <div id="map_show" style="height: 100%; width: 100%" data-markers="<%= @marker.to_json %>"></div>
+    </div>
+
+    <div class="booking-space-picture-show">
+      <div id="street-view" style="height: 100%; width: 100%" data-markers="<%= @marker.to_json %>"></div>
+    </div>
+
+    <div class="booking-space-show">
+      <h2>Booking at <%= @parking_space.address %></h2> <br>
+      <h5 class="parking-space-details"><strong>Catagory:</strong> <%= @parking_space.category%> | <strong>Size:</strong> <%= @parking_space.size %> <strong>sqm</strong></h5>
+      <br>
+      <h5><strong> Start time:</strong> <%= @booking.start_time.strftime("%b %e, %l:%M %p") %> | <strong>End time:</strong> <%= @booking.end_time.strftime("%b %e, %l:%M %p") %> - <strong>Price:</strong> <span id="booking-price"><%= @booking.price / 100.00%></span>€</h5>
+
+      <div class="booking-buttons">
+        <div class="booking-button"><%= link_to "Contact owner" %></div>
+        <div class="booking-button"><%= link_to "Back to bookings", bookings_path %></div>
+        <div class="booking-button"> <%= link_to "Search parking spaces", root_path  %></div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
