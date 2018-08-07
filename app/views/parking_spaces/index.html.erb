@@ -1,9 +1,35 @@
- <h2>Parking Spaces</h2>
+<div class="parking-container">
+  <h1 class="my-parking-title"> Parking Spaces</h1>
+  <div class="row" id="parking-maps-container">
+    <% @parking_spaces_data.first(20).each_with_index do |parking_data, i|  %>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+      <div class="card text-center">
+        <div
+        id="parking-map-<%= i %>"
+        style="width: 100%; height: 200px;"
+        class="parking-map"
+        data-markers="<%= parking_data[:markers].to_json %>"
+        ></div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= parking_data[:parking_space].address%>,
+            <%= parking_data[:parking_space].city%>,
+            <%= parking_data[:parking_space].postcode%>
+          </h5>
+          <p class="card-text">
+            <strong>Category:</strong>
+            <%= parking_data[:parking_space].category%>
+            <br>
+            <strong>Size:</strong>
+            <%= parking_data[:parking_space].size%> meter(s)
+            <br>
+            <strong>Rate:</strong>
+            €<%= parking_data[:parking_space].price_per_hour/ 100.00 %> per hour
+          </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<ul>
-<% @parking_spaces.each do |parking_space| %>
-<li>Address: <%= parking_space.address %></li>
-
-<%= link_to "View", parking_space_path(parking_space.id) %>
-<% end %>
-</ul>
