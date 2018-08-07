@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :edit]
-  before_action :set_parking_space, only: [:new, :create, :edit]
+  before_action :set_parking_space, only: [:show, :new, :create, :edit]
 
   def index
     @bookings = policy_scope(Booking)
@@ -46,6 +46,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @marker = { lat: @parking_space.latitude, lng: @parking_space.longitude}
     authorize @booking
     @parking_space = ParkingSpace.find_by(id: @booking.parking_space_id)
     @car = Car.find_by(id: @booking.car_id)
